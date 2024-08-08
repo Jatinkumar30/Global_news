@@ -6,7 +6,7 @@ const App = () => {
 const [articles , setArticles] = useState([])
 
   useEffect(()=>{ 
-    Axios.get("https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=80f2f2d0859d7a5b4d343c29cc9eb471").then((response)=>{
+    Axios.get(`https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=${import.meta.env.VITE_SOME_KEY}`).then((response)=>{
         setArticles(response.data.articles)
     })
   },[]);
